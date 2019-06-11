@@ -31,5 +31,13 @@ console.log(largoString);
 function nombreCompleto(nombre, apellido, edad) {
     return nombre + "" + apellido + edad;
 }
+function datos(nombre, apellido, edad) {
+    if (edad) {
+        return nombre + "" + apellido;
+    }
+    else {
+        return nombre;
+    }
+}
 var nombreUsuario = nombreCompleto("Saul", "alejos", 34);
 console.log(nombreUsuario);

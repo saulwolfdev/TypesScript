@@ -32,5 +32,9 @@ console.log(largoString)
 function nombreCompleto(nombre:string,apellido:string,edad:number):string{
     return nombre+""+apellido+edad
 }
+function datos(nombre:string,apellido:string,edad?:number):string{
+    if(edad){return nombre+""+apellido}
+    else{return nombre}
+}
 let nombreUsuario=nombreCompleto("Saul","alejos",34)
 console.log(nombreUsuario)
