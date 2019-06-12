@@ -38,3 +38,47 @@ function datos(nombre:string,apellido:string,edad?:number):string{
 }
 let nombreUsuario=nombreCompleto("Saul","alejos",34)
 console.log(nombreUsuario)
+
+function nombreUsuarios(nombre:string,...losdemasParametros:string[]):string{
+        return nombre+""+losdemasParametros.join("")
+}
+let nombreUno=["Saul","Salim","Saladin","Sharan"]
+let nombreDos=["Hasan","Haiser","Haiden","Hitler"]
+console.log(nombreUno)
+console.log(nombreDos)
+
+//TIPOS es una definicion de un tipo
+
+type Nombre={
+    nombre:string,
+    apellido:string,
+    edad:number,
+    carrera:string[],
+    getNombre:()=>string
+}
+
+let persona:Nombre={
+    nombre:"Saul",
+    apellido:"Alejos",
+    edad:34,
+    carrera:["Diseñador","Programador"],
+    getNombre(){
+        return this.nombre
+    }
+}
+console.log(persona)
+//UNIon de tipos
+class Datos{
+    nombre:string="Sin nombre";
+    apellido:string="Sin nombre";
+    apodo:string="Sin nombre";
+    edad:number=0
+    constructor(nombre:string,apellido:string,apodo:string,edad:number){
+        this.nombre=nombre;
+        this.nombre=apellido;
+        this.apodo=apodo;
+        this.edad=edad
+    }
+}
+let DatoNombre:Datos = new Datos("Saul","Alejos","Wolf",34)
+console.log(DatoNombre)
