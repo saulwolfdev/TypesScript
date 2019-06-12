@@ -201,3 +201,28 @@ var Apocalipsis = /** @class */ (function () {
 }());
 var apocalips = Apocalipsis.llamarApocalipsis();
 console.log(apocalips);
+function enviarMision(nombres) {
+    console.log("Enviado a " + nombres.nombre);
+    nombres.regenerar("LOGAN");
+}
+function enviarCuartel(nombres) {
+    console.log("Enviado a " + nombres.nombre);
+}
+var ciclope = {
+    nombre: "xxx",
+    regenerar: function (x) {
+        console.log("se regenero", x);
+    },
+    poder: "ddddd"
+};
+enviarCuartel(ciclope);
+enviarMision(ciclope);
+var MutantesN = /** @class */ (function () {
+    function MutantesN() {
+    }
+    MutantesN.prototype.regenar = function (nombrex) {
+        console.log(nombrex);
+    };
+    return MutantesN;
+}());
+var xxxx = new MutantesN();

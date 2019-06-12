@@ -180,3 +180,42 @@ class Apocalipsis{
 }
 let apocalips = Apocalipsis.llamarApocalipsis()
 console.log(apocalips)
+//INTERFACES
+
+interface NombreMutantes{
+    nombre:string,
+    poder?:string,
+    regenerar(nombreReal:string):void
+}
+function enviarMision(nombres:NombreMutantes){
+console.log("Enviado a "+nombres.nombre)
+    nombres.regenerar("LOGAN")
+}
+function enviarCuartel(nombres:NombreMutantes){
+    console.log("Enviado a "+nombres.nombre)
+    }
+let ciclope:NombreMutantes={
+    nombre:"xxx",
+    regenerar(x:string){
+        console.log("se regenero",x)
+    },
+    poder:"ddddd"
+}
+enviarCuartel(ciclope)
+enviarMision(ciclope)
+//CLASES Y FUNCIONES INTERFASES
+
+interface XmenNuevos{
+    nombrex:string;
+    nombreReal?:string;
+    regenar(nombreReal:string):void
+    
+}
+class MutantesN implements XmenNuevos{
+    nombrex:string;
+    regenar(nombrex){
+            console.log(nombrex)
+    }
+
+}
+let xxxx=new MutantesN()
