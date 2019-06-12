@@ -82,3 +82,101 @@ class Datos{
 }
 let DatoNombre:Datos = new Datos("Saul","Alejos","Wolf",34)
 console.log(DatoNombre)
+//HERENCIA-CONSTRUCTORES
+class Padre{
+    constructor( public nombre:string, private apellido:string){
+        console.log("Constructor padre")
+    }
+    protected getNombre():string{
+        console.log("Get nombre Protegido")
+        return this.nombre
+    }
+
+}
+
+let padreObj:Padre = new Padre("Saul","Alejos")
+console.log("Constructor padre=>",padreObj)
+
+class Hijo extends Padre{
+constructor(a:string,b:string) {
+    console.log("Constructor hijo llamado")
+    super(a,b);
+}
+public getNombre():string{
+    console.log("Get nombre Public")
+    return super.getNombre()
+}
+}
+
+let saulHijo:Hijo = new Hijo("Saul","Alejos")
+console.log("Constructor hijo llamado =>",saulHijo.getNombre())
+
+//GETS SETS
+class Abuelo{
+    private _nombre:string;
+
+    constructor(nombre:string){
+        this._nombre=nombre
+    }
+    get nombre():string{
+        console.log("paso por get")
+        return this._nombre
+        if(this.nombre){
+            return this.nombre
+        }else{
+            return "NO tiene  nombre"
+        }
+    }
+    set nombre(nombre:string){
+        console.log("paso por set")
+        if(nombre.length<3){
+            throw new Error("Los nombre tienen que tener mas de 3 letras")
+            return
+        }
+        this._nombre=nombre
+    }
+}
+let sobrino:Abuelo = new Abuelo("el sobrino tiene nombre Saul")
+console.log(sobrino.nombre)
+
+sobrino.nombre="Sharan"
+console.log(sobrino.nombre)
+//METODOS Y PROPIEDADES ESTATICAS
+
+class Xmen{
+    static nombre:string="Wolverine"
+    constructor(){}
+    static crearXmen(){
+        console.log("se creo de forma estatica")
+        return new Xmen()
+    }
+}
+let Wolverine2=Xmen.crearXmen()
+console.log(Xmen.nombre)
+console.log(Wolverine2)
+//CLASES ABSTRACTAS
+abstract class Mutantes{
+    constructor( public nombre:string, private apellido:string){
+
+    }
+}
+class Xmen2 extends Mutantes{
+
+}
+let wolverine=new Xmen2("Saul","Alejos")
+console.log(wolverine)
+//CONSTRUCTORES PRIVADOS
+class Apocalipsis{
+    static instancia:Apocalipsis
+    private constructor(public nombre:string){
+
+    }
+    static llamarApocalipsis(){
+        if(!Apocalipsis.instancia){
+            Apocalipsis.instancia=new Apocalipsis("SOY APOCALIPSIS")
+        }
+        return Apocalipsis.instancia
+    }
+}
+let apocalips = Apocalipsis.llamarApocalipsis()
+console.log(apocalips)
