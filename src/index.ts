@@ -211,11 +211,11 @@ interface XmenNuevos{
     regenar(nombreReal:string):void
     
 }
-class MutantesN implements XmenNuevos{
-    nombrex:string;
-    regenar(nombrex){
-            console.log(nombrex)
-    }
+// class MutantesN implements XmenNuevos{
+//     nombrex:string;
+//     regenar(nombrex){
+//             console.log(nombrex)
+//     }
 
-}
-let xxxx=new MutantesN()
+// }
+// let xxxx=new MutantesN()
