@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "build": "tsc",
+    "build": "tsc -w",
     "clean": "rimraf dist/ uploads/",
-    "start": "npm run build && node dist/index.js"
+    "start": "npm run build && node dist/index.js -w"
   },
   "keywords": [],
   "author": "fazt",
